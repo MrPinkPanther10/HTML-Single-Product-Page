@@ -2,11 +2,21 @@
 
 html,
 body {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: black;
+}
+
+:root {
+    --rad: 0.7rem;
+    --dur: 0.3s;
+    --color-dark: #2f2f2f;
+    --color-light: #fff;
+    --color-brand: #57bd84;
+    --font-fam: 'Lato', sans-serif;
+    --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
 
 
@@ -91,15 +101,64 @@ h1:hover span {
     color: rgb(255, 255, 255);
 }
 
-.search-button {
-    height: 20px;
-    width: 20px;
+form {
+    position: relative;
+    width: 15rem;
+    background: var(--color-brand);
+    border-radius: var(--rad);
 }
 
-.search-box {
-    border-radius: 5px;
-    height: 30px;
-    align-items: center;
+input,
+button {
+    height: 5rem;
+    font-family: var(--font-fam);
+    border: 0;
+    color: var(--color-dark);
+    font-size: 1.4em;
+}
+
+input[type="search"] {
+    outline: 0;
+    background: var(--color-light);
+    border-radius: var(--rad);
+    appearance: none;
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius;
+    z-index: 1;
+    position: relative;
+    height: 25px;
+    font-size: 1.4em;
+}
+
+button {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    font-weight: bold;
+    background: var(--color-brand);
+    border-radius: 0 var(--rad) var(--rad) 0;
+    height: 25px;
+}
+
+input:not(:placeholder-shown) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - 3rem);
+}
+
+input:not(:placeholder-shown)+button {
+    display: block;
+}
+
+label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
 }
 
 .nav-links {
@@ -234,6 +293,7 @@ h1:hover span {
     text-align: center;
     background-color: transparent;
     border: 1px solid #efefef;
+    border-radius: 0;
 }
 
 .quantity.buttons_added {
@@ -261,6 +321,7 @@ h1:hover span {
     border-radius: 1px;
     cursor: pointer;
     color: black;
+    width: 35px;
 }
 
 .quantity.buttons_added .minus {
@@ -289,9 +350,29 @@ h1:hover span {
 }
 
 
+/* Footer Section  */
+
+.footbar {
+    bottom: 0;
+    left: 0;
+    padding: 0 4%;
+    background: #8dd6d3;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
 /* Responsive */
 
 @media (max-width: 940px) {
+    .header {
+        width: auto;
+    }
+    .navbar {
+        width: auto;
+    }
     .container {
         flex-direction: column;
         margin-top: 60px;
@@ -305,6 +386,12 @@ h1:hover span {
         right: 0;
         top: -65px;
         left: initial;
+    }
+    .nav-links {
+        display: none;
+    }
+    .right-container {
+        display: none;
     }
 }
 

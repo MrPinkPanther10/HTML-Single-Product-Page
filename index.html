@@ -25,7 +25,11 @@
                 <li class="nav-items"><a href="#">Explore</a></li>
                 <li class="nav-items"><a href="#">Collections</a></li>
                 <li class="nav-items">
-                    <a href="#">Search</a>
+                    <form onsubmit="event.preventDefault();" role="search">
+                        <label for="search">Search</label>
+                        <input id="search" type="search" placeholder="Search..." autofocus required />
+                        <button type="submit">Go</button>
+                    </form>
                 </li>
             </ul>
 
@@ -33,6 +37,7 @@
                 <a href="#" class="login-link">Login/Sign Up</a>
             </div>
         </nav>
+
     </div>
 
     <div class="container">
@@ -56,7 +61,7 @@
 
             <!-- Product Pricing -->
             <div class="product-price">
-                <span>$ 39.99</span>
+                <span>$39.99</span>
                 </br>
                 <div class="quantity buttons_added">
                     <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
@@ -86,6 +91,28 @@
             </div>
         </div>
     </div>
+
+    <footer class="footbar">
+        <div class="float-left-title">
+            <h1><span>GG</span><span>DENIM</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-items"><a href="#">Home</a></li>
+            <li class="nav-items"><a href="#">Explore</a></li>
+            <li class="nav-items"><a href="#">Collections</a></li>
+            <li class="nav-items">
+                <form onsubmit="event.preventDefault();" role="search">
+                    <label for="search">Search</label>
+                    <input id="search" type="search" placeholder="Search..." autofocus required />
+                    <button type="submit">Go</button>
+                </form>
+            </li>
+        </ul>
+
+        <div class="right-container">
+            <a href="#" class="login-link">Login/Sign Up</a>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
